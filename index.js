@@ -17,7 +17,7 @@ case "help":{
   process.stdout.write(`
   test : Option parser test.
 ${parser.ToString("    ")}
-  help : Show usage
+  help : Show usage.
 `);
   process.exit(2);
 }break;
