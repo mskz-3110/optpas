@@ -35,7 +35,7 @@ Not found parameter: -i
 
 ## Usage
 ```
-var optpas = require("optpas");
+var optpas = require("./node_modules/optpas/optpas.js");
 var parser = new optpas.OptionParser();
 parser.Add('b', "bool", "0", "Boolean.", (v) => {return (0 != parseInt(v));});
 parser.Add('i', "int", "0", "Integer.", (v) => {return parseInt(v);});
@@ -43,4 +43,5 @@ parser.Add('f', "float", "0", "Float.", (v) => {return parseFloat(v);});
 parser.Add('s', "string", "", "String.", (v) => {return v;});
 parser.Add('x', "flag", null, "Flag.", () => {return true;});
 var {options, values} = parser.Parse(process.argv.slice(2));
+console.log(JSON.stringify({options: options, values: values}));
 ```
