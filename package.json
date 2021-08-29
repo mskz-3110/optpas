@@ -2,9 +2,9 @@
   "name": "optpas",
   "version": "1.0.1",
   "description": "Command line option parser.",
-  "main": "index.js",
+  "main": "optpas.js",
   "scripts": {
-    "optpas": "node index.js"
+    "optpas": "node run.js"
   },
   "repository": {
     "type": "git",
