@@ -79,28 +79,28 @@ optpas.OptionParser = function(){
   };
   
   this.ToString = function(indent){
-    var longNameMaxLen = 0;
-    var defaultValueMaxLen = 0;
+    var long_name_max_len = 0;
+    var default_value_max_len = 0;
     Object.keys(this.Options).forEach(key => {
       let option = this.Options[key];
-      let longNameLen = option.LongName.length;
-      let defaultValueLen = GetLength(option.DefaultValue);
-      if (longNameMaxLen < longNameLen) longNameMaxLen = longNameLen;
-      if (defaultValueMaxLen < defaultValueLen) defaultValueMaxLen = defaultValueLen;
+      let long_name_len = option.LongName.length;
+      let default_value_len = GetLength(option.DefaultValue);
+      if (long_name_max_len < long_name_len) long_name_max_len = long_name_len;
+      if (default_value_max_len < default_value_len) default_value_max_len = default_value_len;
     });
     
     var lines = [];
     Object.keys(this.Options).forEach(key => {
       let option = this.Options[key];
       let line = indent +"-"+ option.ShortName +"|--"+ option.LongName;
-      line += RepeatSpace(longNameMaxLen - option.LongName.length + 1);
-      let defaultValueLen = GetLength(option.DefaultValue);
+      line += RepeatSpace(long_name_max_len - option.LongName.length + 1);
+      let default_value_len = GetLength(option.DefaultValue);
       if (option.DefaultValue !== null){
         line += "<"+ option.DefaultValue +">";
       }else{
         line += "  ";
       }
-      line += RepeatSpace(defaultValueMaxLen - defaultValueLen);
+      line += RepeatSpace(default_value_max_len - default_value_len);
       line += " : "+ option.Description;
       lines.push(line);
     });
