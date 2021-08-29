@@ -1,8 +1,8 @@
 var optpas = this;
 
 optpas.OptionParser = function(){
-  GetArg = function(args, i){
-    return (i < args.length) ? args[i] : null;
+  GetArrayValue = function(array, i){
+    return (i < array.length) ? array[i] : null;
   };
   
   FindOptionByShortName = function(options, short_name){
@@ -43,7 +43,7 @@ optpas.OptionParser = function(){
     var values = [];
     var args_count = args.length;
     for (let argi = 0; argi < args_count; ++argi){
-      let argv = GetArg(args, argi);
+      let argv = GetArrayValue(args, argi);
       let option = null;
       if (argv.startsWith("-")){
         if (argv.startsWith("--")){
@@ -55,7 +55,7 @@ optpas.OptionParser = function(){
         if (option !== null){
           let value = null;
           if (option.DefaultValue !== null){
-            value = GetArg(args, ++argi);
+            value = GetArrayValue(args, ++argi);
             if (value === null) throw "Not found parameter: "+ argv;
           }
           options[option.ShortName] = option.OnParse(value);
