@@ -1,4 +1,4 @@
-var optpas = optpas = this;
+var optpas = this;
 
 optpas.OptionParser = function(){
   GetArg = function(args, i){
@@ -28,13 +28,13 @@ optpas.OptionParser = function(){
   
   this.Options = {};
   
-  this.Add = function(short_name, long_name, default_value, description, on_parse){
+  this.Add = function(short_name, long_name, default_value, description, on_parse = null){
     this.Options[short_name] = {
       ShortName: short_name,
       LongName: long_name,
       DefaultValue: default_value,
       Description: description,
-      OnParse: on_parse
+      OnParse: (on_parse !== null) ? on_parse : (v) => {return v;}
     };
   };
   
