@@ -20,7 +20,7 @@ Command line option parser.
 #### Success
 `NODE_NO_WARNINGS=1 npm run --silent optpas test -- -b 1 -i 2 -f 3.4 -s 5 -x a b c`
 ```
-{"options":{"b":true,"i":2,"f":3.4,"s":"5","x":true},"values":["a","b","c"]}
+{"options":{"bool":true,"int":2,"float":3.4,"string":"5","flag":true},"values":["a","b","c"]}
 ```
 #### Failure: Invalid option
 `NODE_NO_WARNINGS=1 npm run --silent optpas test -- -a`
