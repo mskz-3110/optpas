@@ -75,6 +75,12 @@ optpas.OptionParser = function(){
         }
       }
     });
+    Object.keys(options).forEach(key => {
+      let option = this.Options[key];
+      let value = options[key];
+      delete options[key];
+      options[option.LongName] = value;
+    });
     return {options: options, values: values};
   };
   
