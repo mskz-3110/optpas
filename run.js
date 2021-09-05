@@ -7,8 +7,8 @@ parser.Add('s', "string", "", "String.");
 parser.Add('x', "flag", null, "Flag.", () => {return true;});
 
 var args = process.argv.slice(2);
-var type = args.shift();
-switch (type){
+var action = args.shift();
+switch (action){
 case "test":{
   console.log(JSON.stringify(parser.Parse(args)));
 }break;
@@ -23,7 +23,7 @@ ${parser.ToString("    ")}
 }break;
 
 default:{
-  console.log("Invalid type=" + type + " args=" + JSON.stringify(args));
+  console.log("Invalid action: " + action + " " + JSON.stringify(args));
   process.exit(1);
 }break;
 }
