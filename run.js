@@ -18,7 +18,7 @@ case "help":{
   test : Option parser test.
 ${parser.ToString("    ")}
   help : Show usage.
-`);
+`.slice(1));
   process.exit(2);
 }break;
 
