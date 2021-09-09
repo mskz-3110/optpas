@@ -3,9 +3,7 @@
   "version": "1.1.2",
   "description": "Command line option parser.",
   "main": "optpas.js",
-  "scripts": {
-    "optpas": "node run.js"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mskz-3110/optpas.git"

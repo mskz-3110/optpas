@@ -6,7 +6,7 @@ Command line option parser.
 
 ## Local run
 ### Help
-`NODE_NO_WARNINGS=1 npm run --silent optpas help`
+`node run.js help`
 ```
   test : Option parser test.
     -b|--bool   <0> : Boolean.
@@ -18,17 +18,17 @@ Command line option parser.
 ```
 ### Test
 #### Success
-`NODE_NO_WARNINGS=1 npm run --silent optpas test -- -b 1 -i 2 -f 3.4 -s 5 -x a b c`
+`node run.js test -- -b 1 -i 2 -f 3.4 -s 5 -x a b c`
 ```
 {"options":{"bool":true,"int":2,"float":3.4,"string":"5","flag":true},"values":["a","b","c"]}
 ```
 #### Failure: Invalid option
-`NODE_NO_WARNINGS=1 npm run --silent optpas test -- -a`
+`node run.js test -- -a`
 ```
 Invalid option: -a
 ```
 #### Failure: Not found parameter
-`NODE_NO_WARNINGS=1 npm run --silent optpas test -- -i`
+`node run.js test -- -i`
 ```
 Not found parameter: -i
 ```
