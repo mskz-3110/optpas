@@ -10,6 +10,7 @@ var args = process.argv.slice(2);
 var action = args.shift();
 switch (action){
 case "test":{
+  args.shift();
   console.log(JSON.stringify(parser.Parse(args)));
 }break;
 
